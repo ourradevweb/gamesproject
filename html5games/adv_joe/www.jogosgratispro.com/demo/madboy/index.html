@@ -20,6 +20,9 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+
     <!-- All margins and padding must be zero for the canvas to fill the screen. -->
     <style type="text/css">
         * {
@@ -41,6 +44,15 @@
             touch-action: none;
             -ms-touch-action: none;
         }
+
+        .centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+        
+
+
     </style>
 
     <script type="text/javascript">
@@ -60,7 +72,17 @@
 </head>
 
 <body>
-    <div id="fb-root"></div>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <div class="container" style="
+    position: absolute;
+    margin-top: 6px;">
+      
+          <div class="centered">
+            <button type="submit" class="btn btn-primary submit"><a href="/games.html" style="color: white;">Go To Home</a></button>
+          </div>
+       
+      </div>
 
     <script>
         // Issue a warning if trying to preview an exported project on disk.
@@ -81,6 +103,7 @@
 			<!-- This text is displayed if the visitor's browser does not support HTML5.
 			You can change it, but it is a good idea to link to a description of a browser
 			and provide some links to download some popular HTML5-compatible browsers. -->
+
 			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
 			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
 			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
@@ -89,9 +112,12 @@
 			<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
 		</canvas>
 
+
     </div>
 
     <!-- Pages load faster with scripts at the bottom -->
+
+    
 
     <!-- Construct 2 exported games require jQuery. -->
     <script src="jquery-2.1.1.min.js"></script>
@@ -129,6 +155,8 @@
             });
         }
     </script>
+
+    
 </body>
 
 </html>
