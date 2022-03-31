@@ -2216,7 +2216,7 @@
                     ],
                     [
                         [37, 88, null, 533678825879752, false, [
-                            [1, [2, "https://www.facebook.com/bnagames/?ref=aymt_homepage_panel"]],
+                            [1, [2, "#"]],
                             [1, [2, "NewWindow"]]
                         ]]
                     ]
@@ -2253,7 +2253,7 @@
                     ],
                     [
                         [37, 88, null, 155330429347462, false, [
-                            [1, [2, "http://www.bnagames.com"]],
+                            [1, [2, "#"]],
                             [1, [2, "NewWindow"]]
                         ]]
                     ]
@@ -2575,7 +2575,7 @@
                     ],
                     [
                         [37, 88, null, 578122746846882, false, [
-                            [1, [2, "https://www.facebook.com/bnagames/?ref=aymt_homepage_panel"]],
+                            [1, [2, "#"]],
                             [1, [2, "NewWindow"]]
                         ]]
                     ]
@@ -2612,7 +2612,7 @@
                     ],
                     [
                         [37, 88, null, 171055887133392, false, [
-                            [1, [2, "http://www.bnagames.com"]],
+                            [1, [2, "#"]],
                             [1, [2, "NewWindow"]]
                         ]]
                     ]

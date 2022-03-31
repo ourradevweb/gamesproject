@@ -1,5 +1,5 @@
 {
-    "project": [null, "Preload", [
+    "project" [null, "Preload", [
             [0, true, false, false, false, false, false, false, false, false],
             [1, true, false, false, false, false, false, false, false, false],
             [2, true, false, false, false, false, false, false, false, false],
@@ -3032,7 +3032,7 @@
                                     [0, [1, 0.3]]
                                 ]],
                                 [40, 69, null, 8980242481353378, false, [
-                                    [1, [10, [10, [10, [2, "https://twitter.com/share?&text="],
+                                    [1, [10, [10, [10, [2, "#"],
                                                 [23, "GAME_NAME"]
                                             ],
                                             [2, "&url="]
@@ -3053,7 +3053,7 @@
                                     [0, [1, 0.3]]
                                 ]],
                                 [40, 70, null, 979319867045740, false, [
-                                    [1, [2, "https://id-id.facebook.com/"]],
+                                    [1, [2, "#"]],
                                     [3, 0]
                                 ]]
                             ]
@@ -3112,7 +3112,7 @@
                     ],
                     [
                         [40, 70, null, 3143729204212059, false, [
-                            [1, [2, "https://codecanyon.net/user/gamecoutz/portfolio"]],
+                            [1, [2, "#"]],
                             [3, 0]
                         ]]
                     ]
