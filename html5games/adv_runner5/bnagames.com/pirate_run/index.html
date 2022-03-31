@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Mad boy Adventures</title>
+    <title>Pirate Run</title>
 
     <!-- Standardised web app manifest -->
     <link rel="manifest" href="appmanifest.json" />
@@ -19,9 +19,6 @@
     <!-- Chrome for Android web app tags -->
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet" media="all">
-
 
     <!-- All margins and padding must be zero for the canvas to fill the screen. -->
     <style type="text/css">
@@ -50,40 +47,26 @@
         align-items: center;
         justify-content: center;
         }
-
-    
-
     </style>
 
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-6971342-6']);
-        _gaq.push(['_trackPageview']);
-        _gaq.push(['_trackPageLoadTime']);
-        (function() {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+
 </head>
 
 <body>
 
     <div class="containerr" style="position: absolute;display: flex;justify-content: center;align-items: center;width: 100%;margin-top: 8px;">
       
-          <div class="centered">
-            <button type="submit" class="btn btn-primary submit" style="
-            height: 25px;
-            text-align: center; background-color: #F4AE68; border: none;
-            font-size: 10px;">
-            <a href="../../../../../games.html" style="color: white; text-decoration: none;">Go To Home</a></button>
-          </div>
-       
-      </div>
+        <div class="centered">
+          <button type="submit" class="btn btn-primary submit" style="
+          height: 25px;
+          text-align: center; background-color: #F4AE68; border: none; padding:10px; border-radius: 6px;
+          font-size: 10px;">
+          <a href="../../../../games.html" style="color: white; text-decoration: none;">Go To Home</a></button>
+        </div>
+     
+    </div>
+
+    <div id="fb-root"></div>
 
     <script>
         // Issue a warning if trying to preview an exported project on disk.
@@ -104,21 +87,16 @@
 			<!-- This text is displayed if the visitor's browser does not support HTML5.
 			You can change it, but it is a good idea to link to a description of a browser
 			and provide some links to download some popular HTML5-compatible browsers. -->
-
 			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
 			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
 			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
 			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
-			<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
+			<a href="http://www.apple.com/safari/download/">Apple Safari</a></h1>
 		</canvas>
-
 
     </div>
 
     <!-- Pages load faster with scripts at the bottom -->
-
-    
 
     <!-- Construct 2 exported games require jQuery. -->
     <script src="jquery-2.1.1.min.js"></script>
@@ -149,15 +127,29 @@
         document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
         document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
 
-        if (navigator.serviceWorker && navigator.serviceWorker.register) {
-            // Register an empty service worker to trigger web app install banners.
-            navigator.serviceWorker.register("sw.js", {
-                scope: "./"
-            });
-        }
-    </script>
+        function OnRegisterSWError(e) {
+            console.warn("Failed to register service worker: ", e);
+        };
 
-    
+        // Runtime calls this global method when ready to start caching (i.e. after startup).
+        // This registers the service worker which caches resources for offline support.
+        window.C2_RegisterSW = function C2_RegisterSW() {
+            if (!navigator.serviceWorker)
+                return; // no SW support, ignore call
+
+            try {
+                navigator.serviceWorker.register("sw.js", {
+                        scope: "./"
+                    })
+                    .then(function(reg) {
+                        console.log("Registered service worker on " + reg.scope);
+                    })
+                    .catch(OnRegisterSWError);
+            } catch (e) {
+                OnRegisterSWError(e);
+            }
+        };
+    </script>
 </body>
 
 </html>
